@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party Planner - Home</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <h2>Party Planner</h2>
+            <div class="nav-right">
+                <span id="userEmail"></span>
+                <button class="logout-btn" onclick="logout()">
+                    <i class="material-icons">logout</i>
+                    Uitloggen
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="home-container">
+        <div class="welcome-section">
+            <h1>Welkom bij Party Planner</h1>
+            <p>Plan je volgende feest en maak er iets speciaals van!</p>
+        </div>
+
+        <div class="actions-section">
+            <button class="action-btn primary" onclick="window.location.href='preferences.html'">
+                <i class="material-icons">add_circle</i>
+                Nieuw Feest Plannen
+            </button>
+        </div>
+
+        <div class="parties-section">
+            <h2>Jouw Feestjes</h2>
+            <div id="partiesList" class="parties-grid">
+                <!-- Feestjes worden hier dynamisch toegevoegd -->
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/home.js"></script>
+</body>
+</html> 

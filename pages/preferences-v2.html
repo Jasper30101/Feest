@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party Planner - Feest Voorkeuren</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="preferences-container-v2">
+        <div class="preferences-sidebar">
+            <div class="progress-steps">
+                <div class="step active" data-step="1">
+                    <div class="step-status"></div>
+                    <i class="material-icons">description</i>
+                    <span>Basis Info</span>
+                    <button class="skip-btn" data-step="1">
+                        <i class="material-icons">visibility</i>
+                        <span>Bekijk</span>
+                    </button>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-status"></div>
+                    <i class="material-icons">groups</i>
+                    <span>Gasten</span>
+                    <button class="skip-btn" data-step="2">
+                        <i class="material-icons">visibility</i>
+                        <span>Bekijk</span>
+                    </button>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="step-status"></div>
+                    <i class="material-icons">euro</i>
+                    <span>Budget</span>
+                    <button class="skip-btn" data-step="3">
+                        <i class="material-icons">visibility</i>
+                        <span>Bekijk</span>
+                    </button>
+                </div>
+                <div class="step" data-step="4">
+                    <div class="step-status"></div>
+                    <i class="material-icons">place</i>
+                    <span>Locatie</span>
+                    <button class="skip-btn" data-step="4">
+                        <i class="material-icons">visibility</i>
+                        <span>Bekijk</span>
+                    </button>
+                </div>
+                <div class="step" data-step="5">
+                    <div class="step-status"></div>
+                    <i class="material-icons">music_note</i>
+                    <span>Muziek</span>
+                    <button class="skip-btn" data-step="5">
+                        <i class="material-icons">visibility</i>
+                        <span>Bekijk</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="preferences-content">
+            <form id="preferencesForm" class="preferences-form-v2">
+                <!-- Stap 1: Basis Info -->
+                <div class="form-step active" id="step1">
+                    <h2>Vertel ons over je feest</h2>
+                    <p class="step-description">Begin met het beschrijven van je ideale feest</p>
+                    
+                    <div class="form-group">
+                        <label class="main-question">Wat voor feest wil je organiseren?</label>
+                        <div class="party-type-grid">
+                            <div class="party-type-option">
+                                <input type="radio" name="partyType" id="birthday" value="birthday">
+                                <label for="birthday">
+                                    <i class="material-icons">cake</i>
+                                    <span>Verjaardag</span>
+                                </label>
+                            </div>
+                            <div class="party-type-option">
+                                <input type="radio" name="partyType" id="wedding" value="wedding">
+                                <label for="wedding">
+                                    <i class="material-icons">favorite</i>
+                                    <span>Bruiloft</span>
+                                </label>
+                            </div>
+                            <div class="party-type-option">
+                                <input type="radio" name="partyType" id="business" value="business">
+                                <label for="business">
+                                    <i class="material-icons">business</i>
+                                    <span>Zakelijk</span>
+                                </label>
+                            </div>
+                            <div class="party-type-option">
+                                <input type="radio" name="partyType" id="other" value="other">
+                                <label for="other">
+                                    <i class="material-icons">add_circle</i>
+                                    <span>Anders</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="custom-party-type" id="customPartyType" style="display: none;">
+                        <input 
+                            type="text" 
+                            id="customPartyInput" 
+                            placeholder="Bijv: Babyshower, Pensioenfeest, etc."
+                            class="custom-party-input">
+                    </div>
+
+                    <div class="form-group theme-section">
+                        <label class="main-question">Kies een thema voor je feest</label>
+                        <div class="theme-grid">
+                            <div class="theme-option">
+                                <input type="radio" name="partyTheme" id="theme-21dinner" value="21dinner">
+                                <label for="theme-21dinner">
+                                    <i class="material-icons">restaurant</i>
+                                    <span>21 Dinner</span>
+                                </label>
+                            </div>
+                            <div class="theme-option">
+                                <input type="radio" name="partyTheme" id="theme-casino" value="casino">
+                                <label for="theme-casino">
+                                    <i class="material-icons">casino</i>
+                                    <span>Casino Night</span>
+                                </label>
+                            </div>
+                            <div class="theme-option">
+                                <input type="radio" name="partyTheme" id="theme-countries" value="countries">
+                                <label for="theme-countries">
+                                    <i class="material-icons">public</i>
+                                    <span>Landen van de Wereld</span>
+                                </label>
+                            </div>
+                            <div class="theme-option">
+                                <input type="radio" name="partyTheme" id="theme-hollywood" value="hollywood">
+                                <label for="theme-hollywood">
+                                    <i class="material-icons">movie</i>
+                                    <span>Hollywood Glamour</span>
+                                </label>
+                            </div>
+                            <div class="theme-option">
+                                <input type="radio" name="partyTheme" id="theme-tropical" value="tropical">
+                                <label for="theme-tropical">
+                                    <i class="material-icons">beach_access</i>
+                                    <span>Tropical Paradise</span>
+                                </label>
+                            </div>
+                            <div class="theme-option">
+                                <input type="radio" name="partyTheme" id="theme-masquerade" value="masquerade">
+                                <label for="theme-masquerade">
+                                    <i class="material-icons">face</i>
+                                    <span>Masquerade Ball</span>
+                                </label>
+                            </div>
+                            <div class="theme-option">
+                                <input type="radio" name="partyTheme" id="theme-decades" value="decades">
+                                <label for="theme-decades">
+                                    <i class="material-icons">watch_later</i>
+                                    <span>Decades Party</span>
+                                </label>
+                            </div>
+                            <div class="theme-option">
+                                <input type="radio" name="partyTheme" id="theme-neon" value="neon">
+                                <label for="theme-neon">
+                                    <i class="material-icons">lightbulb</i>
+                                    <span>Neon Night</span>
+                                </label>
+                            </div>
+                            <div class="theme-option">
+                                <input type="radio" name="partyTheme" id="theme-superhero" value="superhero">
+                                <label for="theme-superhero">
+                                    <i class="material-icons">star</i>
+                                    <span>Superhelden</span>
+                                </label>
+                            </div>
+                            <div class="theme-option">
+                                <input type="radio" name="partyTheme" id="theme-other" value="other">
+                                <label for="theme-other">
+                                    <i class="material-icons">more_horiz</i>
+                                    <span>Meer Thema's</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Dropdown met meer thema's -->
+                        <div class="more-themes-dropdown" id="moreThemesDropdown" style="display: none;">
+                            <select id="additionalThemes" class="theme-select">
+                                <option value="">Kies een thema</option>
+                                <optgroup label="Feestelijk">
+                                    <option value="blacktie">Black Tie Gala</option>
+                                    <option value="carnival">Carnaval</option>
+                                    <option value="circus">Circus</option>
+                                    <option value="mardi-gras">Mardi Gras</option>
+                                </optgroup>
+                                <optgroup label="Cultureel">
+                                    <option value="mexican">Mexicaanse Fiesta</option>
+                                    <option value="italian">Italiaanse Avond</option>
+                                    <option value="japanese">Japanese Tea Party</option>
+                                    <option value="greek">Griekse Taverna</option>
+                                </optgroup>
+                                <optgroup label="Seizoenen">
+                                    <option value="winter">Winter Wonderland</option>
+                                    <option value="summer">Summer Beach Party</option>
+                                    <option value="spring">Spring Garden Party</option>
+                                    <option value="fall">Herfst Festival</option>
+                                </optgroup>
+                                <optgroup label="Fantasie">
+                                    <option value="fairytale">Sprookjes</option>
+                                    <option value="space">Space Adventure</option>
+                                    <option value="medieval">Middeleeuws Feest</option>
+                                    <option value="pirates">Piraten Party</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="main-question">Beschrijf je ideale feest</label>
+                        <textarea 
+                            id="partyDescription" 
+                            placeholder="Bijv: Ik wil een gezellig verjaardagsfeest organiseren met spelletjes en muziek..."
+                            rows="4"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="main-question">Wanneer wil je het feest organiseren?</label>
+                        <div class="date-picker-wrapper">
+                            <div class="datetime-inputs">
+                                <div class="date-input">
+                                    <input type="date" id="partyDate">
+                                </div>
+                                <div class="time-input">
+                                    <input type="time" id="partyTime" min="00:00" max="23:59">
+                                </div>
+                            </div>
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="noDateYet">
+                                <label for="noDateYet">Ik weet nog geen datum</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="next-btn" onclick="nextStep()">
+                            Volgende
+                            <i class="material-icons">arrow_forward</i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stap 2: Gasten -->
+                <div class="form-step" id="step2">
+                    <h2>Hoeveel gasten verwacht je?</h2>
+                    <p class="step-description">Kies het verwachte aantal gasten voor je feest</p>
+                    
+                    <div class="guest-range-grid">
+                        <div class="guest-option">
+                            <input type="radio" name="guestCount" id="guests-5" value="0-5">
+                            <label for="guests-5">
+                                <i class="material-icons">group</i>
+                                <span class="guest-number">0-5</span>
+                                <span class="guest-text">Intiem</span>
+                            </label>
+                        </div>
+                        <div class="guest-option">
+                            <input type="radio" name="guestCount" id="guests-10" value="5-10">
+                            <label for="guests-10">
+                                <i class="material-icons">groups</i>
+                                <span class="guest-number">5-10</span>
+                                <span class="guest-text">Klein</span>
+                            </label>
+                        </div>
+                        <div class="guest-option">
+                            <input type="radio" name="guestCount" id="guests-20" value="10-20">
+                            <label for="guests-20">
+                                <i class="material-icons">groups</i>
+                                <span class="guest-number">10-20</span>
+                                <span class="guest-text">Medium</span>
+                            </label>
+                        </div>
+                        <div class="guest-option">
+                            <input type="radio" name="guestCount" id="guests-50" value="20-50">
+                            <label for="guests-50">
+                                <i class="material-icons">groups</i>
+                                <span class="guest-number">20-50</span>
+                                <span class="guest-text">Groot</span>
+                            </label>
+                        </div>
+                        <div class="guest-option">
+                            <input type="radio" name="guestCount" id="guests-100" value="50-100">
+                            <label for="guests-100">
+                                <i class="material-icons">groups</i>
+                                <span class="guest-number">50-100</span>
+                                <span class="guest-text">Extra Groot</span>
+                            </label>
+                        </div>
+                        <div class="guest-option">
+                            <input type="radio" name="guestCount" id="guests-more" value="100+">
+                            <label for="guests-more">
+                                <i class="material-icons">celebration</i>
+                                <span class="guest-number">100+</span>
+                                <span class="guest-text">Festival</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="prev-btn" onclick="prevStep()">
+                            <i class="material-icons">arrow_back</i>
+                            Vorige
+                        </button>
+                        <button type="button" class="next-btn" onclick="nextStep()">
+                            Volgende
+                            <i class="material-icons">arrow_forward</i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stap 3: Budget -->
+                <div class="form-step" id="step3">
+                    <h2>Wat is je budget?</h2>
+                    <p class="step-description">Geef aan hoeveel je wilt uitgeven</p>
+
+                    <div class="budget-section">
+                        <div class="budget-input-wrapper">
+                            <input type="number" id="budget" min="0" step="10" placeholder="0">
+                            <span class="currency">€</span>
+                        </div>
+                        
+                        <div class="budget-checkbox">
+                            <input type="checkbox" id="noBudgetLimit">
+                            <label for="noBudgetLimit">Budget maakt niet uit</label>
+                        </div>
+
+                        <div class="budget-ranges">
+                            <button type="button" class="budget-preset" data-value="50">€50</button>
+                            <button type="button" class="budget-preset" data-value="100">€100</button>
+                            <button type="button" class="budget-preset" data-value="250">€250</button>
+                            <button type="button" class="budget-preset" data-value="500">€500</button>
+                            <button type="button" class="budget-preset" data-value="1000">€1000</button>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="prev-btn" onclick="prevStep()">
+                            <i class="material-icons">arrow_back</i>
+                            Vorige
+                        </button>
+                        <button type="button" class="next-btn" onclick="nextStep()">
+                            Volgende
+                            <i class="material-icons">arrow_forward</i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stap 4: Locatie -->
+                <div class="form-step" id="step4">
+                    <h2>Waar wil je het feest houden?</h2>
+                    <p class="step-description">Kies een locatie voor je feest</p>
+
+                    <div class="location-grid">
+                        <div class="location-option">
+                            <input type="radio" name="location" id="location-home" value="home">
+                            <label for="location-home">
+                                <i class="material-icons">home</i>
+                                <span>Thuis</span>
+                            </label>
+                        </div>
+                        <div class="location-option">
+                            <input type="radio" name="location" id="location-garden" value="garden">
+                            <label for="location-garden">
+                                <i class="material-icons">yard</i>
+                                <span>Tuin</span>
+                            </label>
+                        </div>
+                        <div class="location-option">
+                            <input type="radio" name="location" id="location-venue" value="venue">
+                            <label for="location-venue">
+                                <i class="material-icons">location_city</i>
+                                <span>Feestzaal</span>
+                            </label>
+                        </div>
+                        <div class="location-option">
+                            <input type="radio" name="location" id="location-restaurant" value="restaurant">
+                            <label for="location-restaurant">
+                                <i class="material-icons">restaurant</i>
+                                <span>Restaurant</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="button" class="suggest-location-btn">
+                        <i class="material-icons">add_location</i>
+                        Stel een locatie voor
+                    </button>
+
+                    <div class="form-actions">
+                        <button type="button" class="prev-btn" onclick="prevStep()">
+                            <i class="material-icons">arrow_back</i>
+                            Vorige
+                        </button>
+                        <button type="button" class="next-btn" onclick="nextStep()">
+                            Volgende
+                            <i class="material-icons">arrow_forward</i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stap 5: Muziek -->
+                <div class="form-step" id="step5">
+                    <h2>Wat voor muziek wil je?</h2>
+                    <p class="step-description">Kies je muziekvoorkeuren</p>
+
+                    <div class="music-preferences">
+                        <div class="music-genres">
+                            <h3>Selecteer je favoriete genres</h3>
+                            <div class="genre-grid">
+                                <label class="genre-option">
+                                    <input type="checkbox" name="genres" value="pop">
+                                    <span>Pop</span>
+                                </label>
+                                <label class="genre-option">
+                                    <input type="checkbox" name="genres" value="rock">
+                                    <span>Rock</span>
+                                </label>
+                                <label class="genre-option">
+                                    <input type="checkbox" name="genres" value="hiphop">
+                                    <span>Hip Hop</span>
+                                </label>
+                                <label class="genre-option">
+                                    <input type="checkbox" name="genres" value="dance">
+                                    <span>Dance</span>
+                                </label>
+                                <label class="genre-option">
+                                    <input type="checkbox" name="genres" value="jazz">
+                                    <span>Jazz</span>
+                                </label>
+                                <label class="genre-option">
+                                    <input type="checkbox" name="genres" value="classical">
+                                    <span>Klassiek</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="button" class="spotify-connect-btn">
+                            <i class="material-icons">music_note</i>
+                            Verbind met Spotify voor een playlist
+                        </button>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="prev-btn" onclick="prevStep()">
+                            <i class="material-icons">arrow_back</i>
+                            Vorige
+                        </button>
+                        <button type="button" class="submit-btn" onclick="submitForm()">
+                            Genereer Feestplan
+                            <i class="material-icons">celebration</i>
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <script src="../js/preferences-v2.js"></script>
+</body>
+</html> 

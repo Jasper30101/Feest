@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party Planner - Voorkeuren</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="preferences-container">
+        <div class="preferences-card">
+            <h1>Plan Je Feest</h1>
+            
+            <form id="preferencesForm" class="preferences-form">
+                <div class="form-group">
+                    <label for="partyDescription">Beschrijf je ideale feest</label>
+                    <textarea 
+                        id="partyDescription" 
+                        name="partyDescription" 
+                        placeholder="Bijv: Ik wil een gezellig verjaardagsfeest organiseren met spelletjes en muziek..."
+                        required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="partyDate">Datum van het feest</label>
+                    <div class="date-options">
+                        <input type="date" id="partyDate" name="partyDate">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="noDateYet" name="noDateYet">
+                            <label for="noDateYet">Ik weet nog geen datum</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Aantal gasten</label>
+                    <div class="guest-range">
+                        <button type="button" class="guest-option" data-range="0-5">
+                            <i class="material-icons">group</i>
+                            0-5
+                        </button>
+                        <button type="button" class="guest-option" data-range="5-10">
+                            <i class="material-icons">groups</i>
+                            5-10
+                        </button>
+                        <button type="button" class="guest-option" data-range="10-20">
+                            <i class="material-icons">groups</i>
+                            10-20
+                        </button>
+                        <button type="button" class="guest-option" data-range="20-50">
+                            <i class="material-icons">groups</i>
+                            20-50
+                        </button>
+                        <button type="button" class="guest-option" data-range="50-100">
+                            <i class="material-icons">groups</i>
+                            50-100
+                        </button>
+                        <button type="button" class="guest-option" data-range="100+">
+                            <i class="material-icons">celebration</i>
+                            100+
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="budget">Budget</label>
+                    <div class="budget-options">
+                        <input type="number" id="budget" name="budget" min="0" step="10" placeholder="€">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="noBudgetLimit" name="noBudgetLimit">
+                            <label for="noBudgetLimit">Budget maakt niet uit</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Locatie</label>
+                    <div class="location-options">
+                        <select id="location" name="location">
+                            <option value="">Kies een locatie</option>
+                            <option value="thuis">Thuis</option>
+                            <option value="tuin">Tuin</option>
+                            <option value="feestzaal">Feestzaal</option>
+                            <option value="anders">Anders</option>
+                        </select>
+                        <button type="button" class="suggest-location-btn">
+                            <i class="material-icons">place</i>
+                            Stel een locatie voor
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Type feest</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="partyType" value="muziek"> Muziek
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="partyType" value="dans"> Dans
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="partyType" value="spelletjes"> Spelletjes
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="partyType" value="thema"> Themafeest
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button type="button" class="spotify-connect-btn">
+                        <img src="../assets/images/spotify-icon.svg" alt="Spotify" class="spotify-icon">
+                        Verbind met Spotify voor een playlist
+                    </button>
+                </div>
+
+                <button type="submit" class="submit-btn">Genereer Feestplan</button>
+            </form>
+        </div>
+    </div>
+    <script src="../js/preferences.js"></script>
+</body>
+</html> 

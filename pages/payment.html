@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party Planner - Betaling</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material-Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="payment-container">
+        <div class="payment-card">
+            <div class="payment-header">
+                <h2>Afrekenen</h2>
+                <div class="selected-package" id="selectedPackage">
+                    <!-- Wordt dynamisch ingevuld via JavaScript -->
+                </div>
+            </div>
+
+            <div class="payment-methods">
+                <div class="payment-method ideal">
+                    <h3>Betaal met iDEAL</h3>
+                    <div class="bank-selection">
+                        <div class="bank-option">
+                            <input type="radio" id="ing" name="bank" value="ing">
+                            <label for="ing">
+                                <img src="../assets/images/ing-logo.svg" alt="ING">
+                                <span>ING</span>
+                            </label>
+                        </div>
+                        <div class="bank-option">
+                            <input type="radio" id="abn" name="bank" value="abn">
+                            <label for="abn">
+                                <img src="../assets/images/abn-logo.svg" alt="ABN AMRO">
+                                <span>ABN AMRO</span>
+                            </label>
+                        </div>
+                        <div class="bank-option">
+                            <input type="radio" id="rabobank" name="bank" value="rabobank">
+                            <label for="rabobank">
+                                <img src="../assets/images/rabo-logo.svg" alt="Rabobank">
+                                <span>Rabobank</span>
+                            </label>
+                        </div>
+                        <div class="bank-option">
+                            <input type="radio" id="sns" name="bank" value="sns">
+                            <label for="sns">
+                                <img src="../assets/images/sns-logo.svg" alt="SNS">
+                                <span>SNS</span>
+                            </label>
+                        </div>
+                        <div class="bank-option">
+                            <input type="radio" id="other" name="bank" value="other">
+                            <label for="other">
+                                <i class="material-icons">add_circle</i>
+                                <span>Andere bank</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="payment-divider">
+                    <span>of</span>
+                </div>
+
+                <div class="payment-method apple-pay">
+                    <button class="apple-pay-button">
+                        <i class="material-icons">apple</i>
+                        Pay
+                    </button>
+                </div>
+            </div>
+
+            <div class="payment-summary">
+                <div class="summary-row">
+                    <span>Pakket</span>
+                    <span id="packageName"><!-- Via JS --></span>
+                </div>
+                <div class="summary-row">
+                    <span>Prijs</span>
+                    <span id="packagePrice"><!-- Via JS --></span>
+                </div>
+                <div class="summary-row total">
+                    <span>Totaal</span>
+                    <span id="totalPrice"><!-- Via JS --></span>
+                </div>
+            </div>
+
+            <div class="payment-actions">
+                <button class="back-btn" onclick="window.history.back()">Terug</button>
+                <button class="pay-btn" onclick="processPayment()">
+                    <i class="material-icons">lock</i>
+                    Betaal veilig
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="../js/payment.js"></script>
+</body>
+</html> 
