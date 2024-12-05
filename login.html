@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party Planner - Login</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        .google-logo {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAAWdEVYdENyZWF0aW9uIFRpbWUAMTAvMTUvMTWBvs6PAAABeElEQVQ4jZ2UPUsDQRCGn7vbxEhAUogBK/8AiGBtY2tjYWMhCGr8B5Y2NhYW/gMLCwst/AEWWlgJYmFhYxkQNZGYkMt9WNxd9i6XxFuW3Z2ZZ+admZ0VqsqoKIyMAhCe3i8vz8/LKyKSGeT7nk8mEwFkd2cXVT3/GxQEwVnTdWnUN3h7b+G6LgBB4D9Wq9XjPJAAjI+Pc3FZw/MaALiuS6vV4q5ep1Qq0e50sCyL4CcgCAIAqtUqrutSqVQAcByHIAj+BvIDn3a7jed5iAgiQq/XwxjD5NQUXV9RhG63m4L8wE+rAcIQ27aZm5vHGEMYhpTLZRzHwRiDZVmIyD4gxpgUlARlgXKgZA+WZaUgz/PodDoppFgspkFRFBFFEcaYFJRcURTRNA3GmBQkIogIvu/T7XYpFAqpR0NDtm0Pc7SxucX2zjb3d7fc3t4gIlxdX1EoFNjf22dlZYWPj/dUD5kgAJEhj6IIEaFYLDI7O8P01DSPDw9MT0+OhPwCT/aW9WE7PnoAAAAASUVORK5CYII=');
+            background-size: contain;
+            background-repeat: no-repeat;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <h1>Party Planner</h1>
+            
+            <button class="login-button google-btn">
+                <span class="google-logo"></span>
+                Inloggen met Google
+            </button>
+            
+            <button class="login-button apple-btn">
+                <i class="material-icons">apple</i>
+                Inloggen met Apple
+            </button>
+
+            <div class="divider">
+                <span>of</span>
+            </div>
+
+            <button class="login-button register-btn" onclick="window.location.href='register.html'">
+                Registreer een Account
+            </button>
+        </div>
+    </div>
+    <script src="js/login.js"></script>
+</body>
+</html> 

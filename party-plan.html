@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party Planner - Je Feestplan</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="party-plan-container">
+        <div class="party-plan-card">
+            <div class="success-animation">
+                <i class="material-icons success-icon">check_circle</i>
+            </div>
+            <h1>Je Feestplan is Klaar!</h1>
+            <p class="plan-description">We hebben een geweldig feestplan voor je samengesteld. Download het PDF bestand om alle details te bekijken.</p>
+            
+            <button class="download-btn" onclick="downloadPDF()">
+                <i class="material-icons">download</i>
+                Download Feestplan PDF
+            </button>
+
+            <button class="home-btn" onclick="window.location.href='home.html'">
+                <i class="material-icons">home</i>
+                Terug naar Home
+            </button>
+        </div>
+    </div>
+    <script src="js/party-plan.js"></script>
+</body>
+</html> 
